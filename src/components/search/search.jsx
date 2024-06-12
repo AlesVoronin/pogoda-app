@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_API_URL, geoApiOptions } from "../../api";
+import { geoApiOptions, GEO_API_URL } from "../../api";
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null);
@@ -20,8 +20,7 @@ const Search = ({ onSearchChange }) => {
             };
           }),
         };
-      })
-      .catch((err) => console.error(err));
+      });
   };
 
   const handleOnChange = (searchData) => {
@@ -31,7 +30,7 @@ const Search = ({ onSearchChange }) => {
 
   return (
     <AsyncPaginate
-      placeholder="Найти по городу"
+      placeholder="Search for city"
       debounceTimeout={600}
       value={search}
       onChange={handleOnChange}

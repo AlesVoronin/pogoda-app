@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
 import Search from "./components/search/search";
 import CurrentWeather from "./components/current-weather/current-weather";
 import Forecast from "./components/forecast/forecast";
@@ -7,6 +9,7 @@ import "./App.css";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
+  const [currentWeather1, setCurrentWeather1] = useState(null);
   const [forecast, setForecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
@@ -30,11 +33,35 @@ function App() {
       .catch(console.log);
   };
 
+  // const handleOnSearchChange1 = () => {
+  //   const currentWeatherFetch1 = fetch(
+  //     `${WEATHER_API_URL}/weather?lat=55.7558&lon=37.6173&appid=${WEATHER_API_KEY}&units=metric`
+  //   );
+
+  //   Promise.all([currentWeatherFetch1])
+  //     .then(async (response) => {
+  //       const weatherResponse = await response[0].json();
+  //       setCurrentWeather1({
+  //         city: "Moscow",
+  //         ...weatherResponse,
+  //       });
+  //     })
+  //     .catch(console.log);
+  // };
+
   return (
     <div className="container">
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
+      <div className="row">
+        <div className="col-lm">
+          <Search onSearchChange={handleOnSearchChange} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm">
+          {currentWeather && <CurrentWeather data={currentWeather} />}
+          {forecast && <Forecast data={forecast} />}
+        </div>
+      </div>
     </div>
   );
 }

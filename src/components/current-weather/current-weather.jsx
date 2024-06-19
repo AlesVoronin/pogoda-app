@@ -7,6 +7,7 @@ const CurrentWeather = ({ data }) => {
       <div className="top">
         <div>
           <p className="city">{data.city}</p>
+          <hr />
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
         <img
@@ -19,8 +20,9 @@ const CurrentWeather = ({ data }) => {
         <p className="temperature">{Math.round(data.main.temp)}°C</p>
         <div className="details">
           <div className="parameter-row">
-            <span className="parameter-label">Подробности</span>
+            <span className="parameter-label details-title">Подробности</span>
           </div>
+          <hr />
           <div className="parameter-row">
             <span className="parameter-label">Ощущается как</span>
             <span className="parameter-value">

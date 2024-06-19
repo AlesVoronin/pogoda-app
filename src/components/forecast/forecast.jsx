@@ -26,7 +26,7 @@ const Forecast = ({ data }) => {
 
   return (
     <>
-      <label className="title">Daily</label>
+      <label className="title">На неделю</label>
       <Accordion allowZeroExpanded>
         {data.list.splice(0, 7).map((item, idx) => (
           <AccordionItem key={idx}>
@@ -64,15 +64,15 @@ const Forecast = ({ data }) => {
                   <label>{item.clouds.all}%</label>
                 </div>
                 <div className="daily-details-grid-item">
-                  <label>Скорость ветра:</label>
+                  <label>Ветер:</label>
                   <label>{item.wind.speed} м/с</label>
                 </div>
                 <div className="daily-details-grid-item">
-                  <label>Уровень моря:</label>
+                  <label>Море:</label>
                   <label>{item.main.sea_level}м</label>
                 </div>
                 <div className="daily-details-grid-item">
-                  <label>Ощущается как:</label>
+                  <label>Ощущается:</label>
                   <label>{item.main.feels_like}°C</label>
                 </div>
               </div>

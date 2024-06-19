@@ -1,9 +1,10 @@
 .weather {
   width: 300px;
-  border-radius: 6px;
+  border-radius: 15px;
   box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
   color: #fff;
-  background-color: #333;
+  background-color: rgba(243, 228, 205, 0.26);
+  filter: drop-shadow(5px 35px 24px #1BD);
   margin: 20px auto 0 auto;
   padding: 0 20px 20px 20px;
 }
@@ -17,10 +18,11 @@
 
 .city {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1;
   margin: 0;
   letter-spacing: 1px;
+  color: #F3E4CD
 }
 
 .weather-description {
@@ -31,20 +33,34 @@
 }
 
 .weather-icon {
-  width: 100px;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 10px;
 }
 
 .temperature {
   font-weight: 600;
-  font-size: 70px;
+  font-size: 60px;
   width: auto;
   letter-spacing: -5px;
   margin: 10px 0;
+  color: #ffe2eb;
 }
 
 .details {
   width: 100%;
   padding-left: 20px;
+}
+
+.details .details-title {
+  color: #F3E4CD;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.details hr, .top hr{
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .parameter-row {
